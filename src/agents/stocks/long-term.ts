@@ -7,6 +7,8 @@
  */
 
 import OpenAI from "openai";
+import { db } from "../../db/index.js";
+import { sentimentAnalysis } from "../../db/schema.js";
 
 interface SentimentAnalysis {
   symbol: string;
@@ -64,6 +66,9 @@ class StockLongTermAgent {
           console.log(`\n🔍 Analyzing ${symbol}...`);
           const analysis = await this.analyzeSentiment(symbol);
           this.displayAnalysis(analysis);
+
+          // Save to database
+          await this.saveToDatabase(analysis);
 
           // Delay between symbols to avoid rate limits
           await this.sleep(5000);
@@ -265,6 +270,30 @@ Format your response as JSON with the following structure:
   }
 
   /**
+   * Save analysis to database
+   */
+  private async saveToDatabase(analysis: SentimentAnalysis) {
+    try {
+      await db.insert(sentimentAnalysis).values({
+        symbol: analysis.symbol,
+        sentiment: analysis.sentiment,
+        confidence: analysis.confidence,
+        reasoning: analysis.reasoning,
+        keyFactors: analysis.keyFactors,
+        recommendation: analysis.recommendation,
+        timeHorizon: analysis.timeHorizon,
+        riskLevel: analysis.riskLevel,
+        targetPrice: analysis.targetPrice?.toString(),
+        aiModel: "google/gemini-2.0-flash-exp:free",
+      });
+
+      console.log(`💾 Saved ${analysis.symbol} analysis to database`);
+    } catch (error) {
+      console.error(`❌ Failed to save ${analysis.symbol} to database:`, error);
+    }
+  }
+
+  /**
    * Display analysis in console
    */
   private displayAnalysis(analysis: SentimentAnalysis) {
@@ -359,6 +388,7 @@ Format your response as JSON with the following structure:
     console.log(`\n🧠 Running ad-hoc analysis for ${symbol}...\n`);
     const analysis = await this.analyzeSentiment(symbol);
     this.displayAnalysis(analysis);
+    await this.saveToDatabase(analysis);
     return analysis;
   }
 

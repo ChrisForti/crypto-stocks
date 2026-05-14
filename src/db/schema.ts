@@ -103,3 +103,27 @@ export const executionLog = pgTable(
     timestampIdx: index("idx_timestamp").on(table.timestamp),
   }),
 );
+
+// Sentiment analysis - AI-driven stock analysis
+export const sentimentAnalysis = pgTable(
+  "sentiment_analysis",
+  {
+    id: serial("id").primaryKey(),
+    symbol: text("symbol").notNull(),
+    sentiment: text("sentiment").notNull(), // bullish, bearish, neutral
+    confidence: integer("confidence").notNull(), // 0-100
+    reasoning: text("reasoning").notNull(),
+    keyFactors: text("key_factors").array(), // Array of strings
+    recommendation: text("recommendation").notNull(), // buy, sell, hold
+    timeHorizon: text("time_horizon").notNull(),
+    riskLevel: text("risk_level").notNull(), // low, medium, high
+    targetPrice: decimal("target_price", { precision: 10, scale: 2 }),
+    aiModel: text("ai_model").default("google/gemini-2.0-flash-exp:free"),
+    timestamp: timestamp("timestamp").defaultNow(),
+  },
+  (table: any) => ({
+    symbolIdx: index("idx_sentiment_symbol").on(table.symbol),
+    timestampIdx: index("idx_sentiment_timestamp").on(table.timestamp),
+    sentimentIdx: index("idx_sentiment_type").on(table.sentiment),
+  }),
+);
