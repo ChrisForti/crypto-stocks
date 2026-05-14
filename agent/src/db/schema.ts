@@ -22,7 +22,7 @@ export const marketDepth = pgTable(
     bestAsk: decimal("best_ask", { precision: 20, scale: 8 }).notNull(),
     timestamp: timestamp("timestamp").defaultNow(),
   },
-  (table) => ({
+  (table: any) => ({
     symbolTimestampIdx: index("idx_symbol_timestamp").on(
       table.symbol,
       table.timestamp,
@@ -57,7 +57,7 @@ export const leverageOpportunities = pgTable(
     rejectionReason: text("rejection_reason"),
     createdAt: timestamp("created_at").defaultNow(),
   },
-  (table) => ({
+  (table: any) => ({
     assetTypeIdx: index("idx_asset_type").on(table.assetType),
     createdAtIdx: index("idx_created_at").on(table.createdAt),
     statusIdx: index("idx_status").on(table.status),
@@ -98,7 +98,7 @@ export const executionLog = pgTable(
     notes: text("notes"),
     timestamp: timestamp("timestamp").defaultNow(),
   },
-  (table) => ({
+  (table: any) => ({
     opportunityIdIdx: index("idx_opportunity_id").on(table.opportunityId),
     timestampIdx: index("idx_timestamp").on(table.timestamp),
   }),
