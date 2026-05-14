@@ -1,0 +1,25 @@
+services:
+  agent:
+    build: ./agent
+    container_name: market-analyzer-agent
+    ports:
+      - "3141:3141"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - TAVILY_API_KEY=${TAVILY_API_KEY}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL}
+      - ENABLE_SCHEDULER=${ENABLE_SCHEDULER}
+      - RUN_ANALYSIS_ON_STARTUP=false
+    volumes:
+      - ./prompts:/app/prompts:ro
+      - agent_sessions:/app/data
+
+  adminer:
+    image: adminer:latest
+    container_name: market-analyzer-adminer
+    ports:
+      - "8081:8080"
+
+volumes:
+  agent_sessions:

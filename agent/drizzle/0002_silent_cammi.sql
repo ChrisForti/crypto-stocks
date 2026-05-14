@@ -1,0 +1,1 @@
+ALTER TABLE "market_opportunities" RENAME TO "standup_opportunities";

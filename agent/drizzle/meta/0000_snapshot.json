@@ -1,0 +1,134 @@
+{
+  "id": "289979eb-e637-4a87-97e2-5ee777649289",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "market_opportunities": {
+      "name": "market_opportunities",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "opportunity": {
+          "name": "opportunity",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "market_why": {
+          "name": "market_why",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "material_recommendation": {
+          "name": "material_recommendation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cnc_edge": {
+          "name": "cnc_edge",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "target_buyer_persona": {
+          "name": "target_buyer_persona",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "craft_type": {
+          "name": "craft_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hull_type": {
+          "name": "hull_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "construction_method": {
+          "name": "construction_method",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "length": {
+          "name": "length",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "width": {
+          "name": "width",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primary_wood": {
+          "name": "primary_wood",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "accent_wood": {
+          "name": "accent_wood",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "finish_trend": {
+          "name": "finish_trend",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "price_point": {
+          "name": "price_point",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "market_sentiment": {
+          "name": "market_sentiment",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "luxury_features": {
+          "name": "luxury_features",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

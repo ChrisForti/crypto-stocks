@@ -1,0 +1,390 @@
+{
+  "id": "c6916554-bf17-4481-9095-19912c44a757",
+  "prevId": "fc221959-00c8-42ac-a1ee-90fcf74c0953",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "kayak_opportunities": {
+      "name": "kayak_opportunities",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "opportunity": {
+          "name": "opportunity",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "market_why": {
+          "name": "market_why",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "source_origin": {
+          "name": "source_origin",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "material_recommendation": {
+          "name": "material_recommendation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cnc_edge": {
+          "name": "cnc_edge",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "target_buyer_persona": {
+          "name": "target_buyer_persona",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "boat_type": {
+          "name": "boat_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "construction_method": {
+          "name": "construction_method",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "length": {
+          "name": "length",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "width": {
+          "name": "width",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "capacity": {
+          "name": "capacity",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primary_wood": {
+          "name": "primary_wood",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "accent_wood": {
+          "name": "accent_wood",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "finish_trend": {
+          "name": "finish_trend",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "price_point": {
+          "name": "price_point",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "market_sentiment": {
+          "name": "market_sentiment",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "heritage_features": {
+          "name": "heritage_features",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "standup_opportunities": {
+      "name": "standup_opportunities",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "opportunity": {
+          "name": "opportunity",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "market_why": {
+          "name": "market_why",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "source_origin": {
+          "name": "source_origin",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "material_recommendation": {
+          "name": "material_recommendation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cnc_edge": {
+          "name": "cnc_edge",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "target_buyer_persona": {
+          "name": "target_buyer_persona",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "craft_type": {
+          "name": "craft_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hull_type": {
+          "name": "hull_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "construction_method": {
+          "name": "construction_method",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "length": {
+          "name": "length",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "width": {
+          "name": "width",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primary_wood": {
+          "name": "primary_wood",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "accent_wood": {
+          "name": "accent_wood",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "finish_trend": {
+          "name": "finish_trend",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "price_point": {
+          "name": "price_point",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "market_sentiment": {
+          "name": "market_sentiment",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "luxury_features": {
+          "name": "luxury_features",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "surfboard_opportunities": {
+      "name": "surfboard_opportunities",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "opportunity": {
+          "name": "opportunity",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "market_why": {
+          "name": "market_why",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "source_origin": {
+          "name": "source_origin",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "material_recommendation": {
+          "name": "material_recommendation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cnc_edge": {
+          "name": "cnc_edge",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "target_buyer_persona": {
+          "name": "target_buyer_persona",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "board_type": {
+          "name": "board_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "construction_method": {
+          "name": "construction_method",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "length": {
+          "name": "length",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "width": {
+          "name": "width",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "thickness": {
+          "name": "thickness",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primary_wood": {
+          "name": "primary_wood",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "accent_wood": {
+          "name": "accent_wood",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "finish_trend": {
+          "name": "finish_trend",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "price_point": {
+          "name": "price_point",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "market_sentiment": {
+          "name": "market_sentiment",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "eco_features": {
+          "name": "eco_features",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

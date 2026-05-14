@@ -1,0 +1,29 @@
+{
+  "name": "crypto-stocks-arbitrage-agent",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "db:generate": "drizzle-kit generate:pg",
+    "db:migrate": "tsx migrate.ts",
+    "run:crypto": "tsx src/agents/crypto/index.ts",
+    "run:stocks": "tsx src/agents/stocks/index.ts",
+    "run:all": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "ccxt": "^4.2.25",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.30.0",
+    "openai": "^4.28.0",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.11.0",
+    "drizzle-kit": "^0.20.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

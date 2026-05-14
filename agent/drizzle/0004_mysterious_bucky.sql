@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS "kayak_opportunities" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"timestamp" timestamp DEFAULT now(),
+	"opportunity" text NOT NULL,
+	"market_why" text,
+	"source_origin" text,
+	"material_recommendation" text,
+	"cnc_edge" text,
+	"target_buyer_persona" text,
+	"boat_type" text,
+	"construction_method" text,
+	"length" text,
+	"width" text,
+	"capacity" text,
+	"primary_wood" text,
+	"accent_wood" text,
+	"finish_trend" text,
+	"price_point" text,
+	"market_sentiment" text,
+	"heritage_features" text
+);

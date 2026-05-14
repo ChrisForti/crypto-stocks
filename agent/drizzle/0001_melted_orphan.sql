@@ -1,0 +1,1 @@
+ALTER TABLE "market_opportunities" ADD COLUMN "source_origin" text;
