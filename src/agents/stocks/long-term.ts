@@ -93,7 +93,9 @@ class StockLongTermAgent {
       const prompt = this.buildAnalysisPrompt(symbol);
 
       const completion = await this.openai.chat.completions.create({
-        model: "google/gemini-2.0-flash-exp:free",
+        model:
+          process.env.OPENROUTER_MODEL ||
+          "meta-llama/llama-3.1-8b-instruct:free",
         messages: [
           {
             role: "system",
@@ -284,7 +286,9 @@ Format your response as JSON with the following structure:
         timeHorizon: analysis.timeHorizon,
         riskLevel: analysis.riskLevel,
         targetPrice: analysis.targetPrice?.toString(),
-        aiModel: "google/gemini-2.0-flash-exp:free",
+        aiModel:
+          process.env.OPENROUTER_MODEL ||
+          "meta-llama/llama-3.1-8b-instruct:free",
       });
 
       console.log(`💾 Saved ${analysis.symbol} analysis to database`);
